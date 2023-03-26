@@ -8,6 +8,6 @@ export abstract class BasePage {
         //this.driver.startDriver()
     }
     async navigateTo(url: string) {
-        await this.driver.Page.goto(url);
+        await this.driver.Page.goto(url, { waitUntil: 'networkidle' });
     }
 }

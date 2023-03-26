@@ -18,5 +18,9 @@ export class Driver {
     get Page(): Page {
         return this.page;
     }
+    async closeDriver() {
+        await this.context.close()
+        await this.browser.close()
+    }
 }
-export const driverInstance=new Driver()
+export const driverInstance = new Driver()

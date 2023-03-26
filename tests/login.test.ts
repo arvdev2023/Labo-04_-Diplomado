@@ -1,7 +1,7 @@
 import { driverInstance } from "../src/core/driver";
 import { LoginPage } from "../src/pages/login.page"
 
-describe('Login from Udemy', () => {
+describe.skip('Login from TestingShop', () => {
     let loginPage: LoginPage
     beforeAll(async () => {
 
@@ -12,15 +12,15 @@ describe('Login from Udemy', () => {
 
     })
     it('Go To Page', async () => {
-        await loginPage.navigateTo('https://www.udemy.com/join/login-popup/?locale=es_ES&response_type=html&next=https%3A%2F%2Fwww.udemy.com%2F');
+        await loginPage.navigateTo('https://thetestingworld.com/shop/index.php?route=account/login');
     });
 
     it('Sets Username', async () => {
-        await loginPage.setUserName('');
+        await loginPage.setUserName('arvd20197@gmail.com');
     });
 
     it('Sets Password', async () => {
-        await loginPage.setPassword('');
+        await loginPage.setPassword('Testing2023');
     });
     it('Clicks login Button', async () => {
         await loginPage.clickButton();

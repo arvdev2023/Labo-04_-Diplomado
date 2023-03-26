@@ -1,9 +1,10 @@
 import { BasePage } from "./base.page";
 
 export class LoginPage extends BasePage {
-    private username: string = '//div/input[@name="email"]';
-    private password: string = '//div/input[@name="password"]';
-    private buttonSign: string = '//form/button[@class="ud-btn ud-btn-large ud-btn-brand ud-heading-md helpers--auth-submit-button--2K2dh"]';
+    private username: string = '//input[@id="input-email"]';
+    private password: string = '//input[@id="input-password"]';
+    private buttonSign: string = '//input[@value="Login"]';
+    private selectorHome: string = '//a[text()="Your Store"]';
     constructor() {
         super()
     }
@@ -15,5 +16,8 @@ export class LoginPage extends BasePage {
     }
     async clickButton() {
         await this.driver.Page.click(this.buttonSign)
+    }
+    async clickHome() {
+        await this.driver.Page.click(this.selectorHome)
     }
 }
